@@ -1,7 +1,7 @@
 <?php
-for ($i = 0; $i <= 1337; $i ++) {
-    if ($i == 42) {
-        echo "<strong><u>$i</u></strong><br>";
+for ($i = 0; $i <= 100; $i ++) {
+    if ($i =< 20) {
+        echo "<strong><i>$i</i></strong><br>";
     } else {
         echo "$i<br>";
     }
