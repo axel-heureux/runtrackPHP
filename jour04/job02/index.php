@@ -21,7 +21,6 @@
     
     <?php
     if ($_GET) {
-        echo "<h2>Arguments recu :</h2>";
         echo "<table border='1'>";
         foreach ($_GET as $cle => $valeur) {
             echo "<tr><td>$cle</td><td>$valeur</td></tr>";
