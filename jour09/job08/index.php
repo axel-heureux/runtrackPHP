@@ -13,8 +13,8 @@ if ($mysqli->connect_error) {
 }
 
 // Récupération des données
-$query = $mysqli->query("SELECT COUNT(*) AS Nombre_totale_etudiant FROM etudiants;");
-$etudiants = $query->fetch_all(MYSQLI_ASSOC);
+$query = $mysqli->query("SELECT SUM(capacite) AS Capacite_totale FROM salles;");
+$salles = $query->fetch_all(MYSQLI_ASSOC);
 
 // Fermeture de la connexion
 $mysqli->close();
@@ -48,8 +48,8 @@ $mysqli->close();
             <tr>
                 <?php
                 // Affichage des en-têtes du tableau
-                if (!empty($etudiants)) {
-                    foreach (array_keys($etudiants[0]) as $column) {
+                if (!empty($salles)) {
+                    foreach (array_keys($salles[0]) as $column) {
                         echo "<th>" . htmlspecialchars($column) . "</th>";
                     }
                 }
@@ -59,10 +59,10 @@ $mysqli->close();
         <tbody>
             <?php
             // Affichage des données des étudiants
-            if (!empty($etudiants)) {
-                foreach ($etudiants as $etudiants) {
+            if (!empty($salles)) {
+                foreach ($salles as $salles) {
                     echo "<tr>";
-                    foreach ($etudiants as $value) {
+                    foreach ($salles as $value) {
                         echo "<td>" . htmlspecialchars($value) . "</td>";
             }}}
             ?>
